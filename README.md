@@ -1,4 +1,4 @@
-## Semantic Accordion
+# Semantic Accordion
 
 This repository contains pre-compiled accordion files using the default themes. This is intended for use in projects that do not need all the bells and whistles of Semantic UI, and want to keep file size to a minimum.
 
