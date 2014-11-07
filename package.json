@@ -1,10 +1,6 @@
 {
   "name": "semantic-ui-accordion",
-<<<<<<< HEAD
   "version": "1.0.0-beta",
-=======
-  "version": "1.0.0",
->>>>>>> f75adace7ecfd63594293d2bd1eefc5f5362e21a
   "title": "Semantic UI - Accordion",
   "description": "Single component release of accordion",
   "homepage": "http://www.semantic-ui.com",
@@ -17,16 +13,9 @@
   "bugs": {
     "url": "https://github.com/Semantic-Org/Semantic-UI/issues"
   },
-<<<<<<< HEAD
   "devDependencies": {},
   "dependencies": {
     "jquery": "x.x.x"
   },
-=======
-  "dependencies": {
-    "jquery": "x.x.x"
-  },
-  "devDependencies": {},
->>>>>>> f75adace7ecfd63594293d2bd1eefc5f5362e21a
   "main": "index.js"
 }

@@ -14,9 +14,5 @@
     "jquery": "x.x.x"
   },
   "main": "accordion.js",
-<<<<<<< HEAD
   "version": "1.0.0-beta"
-=======
-  "version": "1.0.0"
->>>>>>> f75adace7ecfd63594293d2bd1eefc5f5362e21a
 }
