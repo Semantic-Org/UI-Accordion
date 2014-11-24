@@ -3,7 +3,15 @@
 - **Accordion** - Accordions are now unstyled by default allowing for simpler coupling with other UI without having to override styles. Styled accordions are now included as a variation ``ui styled accordion``
 - **Accordion** - Accordion now includes all icons in an embedded font instead of requiring icons
 
-### Version 0.13.1- Feb 28, 2014
+### Version 0.19.0 - July 3, 2014
+
+- **Accordion** - Fixes incompatibilities with ``ui list`` when used inside a ``ui accordion``, fixes issues with menu accordion display in some circumstances
+
+### Version 0.18.0 - June 6, 2014
+
+- **Accordion** - Accordion title does not know have to be :first-child to receive proper border **Thanks BigBlueHat**
+
+### Version 0.13.1 - Feb 28, 2014
 
 - **Accordion** - Fixes issues with accordion rules being too specific, causing several common usages of accordions to break
 
