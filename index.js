@@ -1,5 +1,5 @@
 /*
- * # Semantic - Accordion
+ * #  Semantic - Accordion
  * http://github.com/semantic-org/semantic-ui/
  *
  *
