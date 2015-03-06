@@ -1,3 +1,9 @@
+### Version 1.11.2 - March 6, 2015
+
+- **Accordion** - Accordion can now specify a trigger element instead of `title`, added an [example in docs](http://www.semantic-ui.com/modules/accordion.html#changing-trigger)
+- **Accordion** - Accordion can now hide while opening animation is still occuring
+- **Accordion** - Removed mistaken extra `1px` top border on nested `styled accordion`
+
 ### Version 1.6.1 - January 05, 2015
 
 - **Accordion** - Accordion now uses ``useFailSafe: true`` to avoid callbacks not occurring because of race conditions with `transitionend` in webkit
