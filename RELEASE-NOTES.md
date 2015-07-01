@@ -1,7 +1,14 @@
+### Version 2.0.0 - June 30, 2015
+
+- **Accordion** - adds `onOpening` and `onClosing` callback (before animation) to go with `onOpen`, `onClose` (after animation) **Thanks @cluppric**
+- **Accordion** - Added `on` setting for specifying accordion trigger event.
+- **Accordion** - Fixed bug where `exclusive: true` could sometimes cause other accordion element animations to get stuck when animating rapidly
+- **Accordion** - Accordion no longer sets a `font-size` to better couple with other components defaults
+
 ### Version 1.11.2 - March 6, 2015
 
 - **Accordion** - Accordion can now specify a trigger element instead of `title`, added an [example in docs](http://www.semantic-ui.com/modules/accordion.html#changing-trigger)
-- **Accordion** - Accordion can now hide while opening animation is still occuring
+- **Accordion** - Accordion can now hide while opening animation is still occurring
 - **Accordion** - Removed mistaken extra `1px` top border on nested `styled accordion`
 
 ### Version 1.6.1 - January 05, 2015

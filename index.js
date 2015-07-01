@@ -1,9 +1,9 @@
 /*!
- * # Semantic UI 1.12.3 - Accordion
+ * # Semantic UI 2.0.0 - Accordion
  * http://github.com/semantic-org/semantic-ui/
  *
  *
- * Copyright 2014 Contributors
+ * Copyright 2015 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
@@ -106,7 +106,7 @@ module.exports = function(parameters) {
           events: function() {
             module.debug('Binding delegated events');
             $module
-              .on('click' + eventNamespace, selector.trigger, module.event.click)
+              .on(settings.on + eventNamespace, selector.trigger, module.event.click)
             ;
           }
         },
@@ -154,54 +154,59 @@ module.exports = function(parameters) {
             $activeContent = $activeTitle.next($content),
             isAnimating = $activeContent.hasClass(className.animating),
             isActive    = $activeContent.hasClass(className.active),
-            isUnopen    = (!isActive && !isAnimating)
+            isOpen      = (isActive || isAnimating)
           ;
-          if(isUnopen) {
-            module.debug('Opening accordion content', $activeTitle);
-            if(settings.exclusive) {
-              module.closeOthers.call($activeTitle);
-            }
-            $activeTitle
-              .addClass(className.active)
-            ;
-            $activeContent.addClass(className.animating);
-            if(settings.animateChildren) {
-              if($.fn.transition !== undefined && $module.transition('is supported')) {
-                $activeContent
-                  .children()
-                    .transition({
-                      animation   : 'fade in',
-                      queue       : false,
-                      useFailSafe : true,
-                      debug       : settings.debug,
-                      verbose     : settings.verbose,
-                      duration    : settings.duration
-                    })
-                ;
-              }
-              else {
-                $activeContent
-                  .children()
-                    .stop(true)
-                    .animate({
-                      opacity: 1
-                    }, settings.duration, module.resetOpacity)
-                ;
-              }
-            }
-            $activeContent
-              .stop(true)
-              .slideDown(settings.duration, settings.easing, function() {
-                $activeContent
-                  .removeClass(className.animating)
-                  .addClass(className.active)
-                ;
-                module.reset.display.call(this);
-                settings.onOpen.call(this);
-                settings.onChange.call(this);
-              })
-            ;
+          if(isOpen) {
+            module.debug('Accordion already open, skipping', $activeContent);
+            return;
           }
+          module.debug('Opening accordion content', $activeTitle);
+          settings.onOpening.call($activeContent);
+          if(settings.exclusive) {
+            module.closeOthers.call($activeTitle);
+          }
+          $activeTitle
+            .addClass(className.active)
+          ;
+          $activeContent
+            .stop(true, true)
+            .addClass(className.animating)
+          ;
+          if(settings.animateChildren) {
+            if($.fn.transition !== undefined && $module.transition('is supported')) {
+              $activeContent
+                .children()
+                  .transition({
+                    animation   : 'fade in',
+                    queue       : false,
+                    useFailSafe : true,
+                    debug       : settings.debug,
+                    verbose     : settings.verbose,
+                    duration    : settings.duration
+                  })
+              ;
+            }
+            else {
+              $activeContent
+                .children()
+                  .stop(true, true)
+                  .animate({
+                    opacity: 1
+                  }, settings.duration, module.resetOpacity)
+              ;
+            }
+          }
+          $activeContent
+            .slideDown(settings.duration, settings.easing, function() {
+              $activeContent
+                .removeClass(className.animating)
+                .addClass(className.active)
+              ;
+              module.reset.display.call(this);
+              settings.onOpen.call(this);
+              settings.onChange.call(this);
+            })
+          ;
         },
 
         close: function(query) {
@@ -219,10 +224,12 @@ module.exports = function(parameters) {
           ;
           if((isActive || isOpening) && !isClosing) {
             module.debug('Closing accordion content', $activeContent);
+            settings.onClosing.call($activeContent);
             $activeTitle
               .removeClass(className.active)
             ;
             $activeContent
+              .stop(true, true)
               .addClass(className.animating)
             ;
             if(settings.animateChildren) {
@@ -242,7 +249,7 @@ module.exports = function(parameters) {
               else {
                 $activeContent
                   .children()
-                    .stop(true)
+                    .stop(true, true)
                     .animate({
                       opacity: 0
                     }, settings.duration, module.resetOpacity)
@@ -250,7 +257,6 @@ module.exports = function(parameters) {
               }
             }
             $activeContent
-              .stop(true)
               .slideUp(settings.duration, settings.easing, function() {
                 $activeContent
                   .removeClass(className.animating)
@@ -292,6 +298,10 @@ module.exports = function(parameters) {
             $openTitles
               .removeClass(className.active)
             ;
+            $openContents
+              .removeClass(className.animating)
+              .stop(true, true)
+            ;
             if(settings.animateChildren) {
               if($.fn.transition !== undefined && $module.transition('is supported')) {
                 $openContents
@@ -308,7 +318,7 @@ module.exports = function(parameters) {
               else {
                 $openContents
                   .children()
-                    .stop()
+                    .stop(true, true)
                     .animate({
                       opacity: 0
                     }, settings.duration, module.resetOpacity)
@@ -316,7 +326,6 @@ module.exports = function(parameters) {
               }
             }
             $openContents
-              .stop()
               .slideUp(settings.duration , settings.easing, function() {
                 $(this).removeClass(className.active);
                 module.reset.display.call(this);
@@ -423,7 +432,7 @@ module.exports = function(parameters) {
               });
             }
             clearTimeout(module.performance.timer);
-            module.performance.timer = setTimeout(module.performance.display, 100);
+            module.performance.timer = setTimeout(module.performance.display, 500);
           },
           display: function() {
             var
@@ -535,8 +544,10 @@ module.exports.settings = {
   namespace       : 'accordion',
 
   debug           : false,
-  verbose         : true,
+  verbose         : false,
   performance     : true,
+
+  on              : 'click',
 
   exclusive       : true,
   collapsible     : true,
@@ -546,7 +557,10 @@ module.exports.settings = {
   duration        : 350,
   easing          : 'easeOutQuad',
 
+
+  onOpening       : function(){},
   onOpen          : function(){},
+  onClosing       : function(){},
   onClose         : function(){},
   onChange        : function(){},
 
