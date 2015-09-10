@@ -1,3 +1,7 @@
+#### Bugs
+
+- **Accordion** - Added missing notation for accordion docs [#2812](https://github.com/Semantic-Org/Semantic-UI/issues/2812)
+
 ### Version 2.0.0 - June 30, 2015
 
 - **Accordion** - adds `onOpening` and `onClosing` callback (before animation) to go with `onOpen`, `onClose` (after animation) **Thanks @cluppric**
