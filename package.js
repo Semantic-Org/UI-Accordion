@@ -2,7 +2,7 @@
 Package.describe({
   name    : 'semantic:ui-accordion',
   summary : 'Semantic UI - Accordion: Single component release',
-  version : '2.1.4',
+  version : '2.1.5',
   git     : 'git://github.com/Semantic-Org/UI-Accordion.git',
 });
 
