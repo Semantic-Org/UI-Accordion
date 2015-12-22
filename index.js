@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.1.3 - Accordion
+ * # Semantic UI 2.1.6 - Accordion
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -593,5 +593,5 @@ $.extend( $.easing, {
   }
 });
 
-})( require("jquery"), window , document );
+})( require("jquery"), window, document );
 
