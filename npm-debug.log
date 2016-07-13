@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'publish' ]
+2 info using npm@3.10.5
+3 info using node@v5.10.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/jack/semantic/repos/accordion',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/jack/.npm/semantic-ui-accordion/2.2.2/package.tgz not in flight; packing
+9 verbose correctMkdir /home/jack/.npm correctMkdir not in flight; initializing
+10 info lifecycle semantic-ui-accordion@2.2.2~prepublish: semantic-ui-accordion@2.2.2
+11 silly lifecycle semantic-ui-accordion@2.2.2~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/home/jack/.npm/semantic-ui-accordion/2.2.2/package.tgz',
+12 verbose tar pack   '/home/jack/semantic/repos/accordion' ]
+13 verbose tarball /home/jack/.npm/semantic-ui-accordion/2.2.2/package.tgz
+14 verbose folder /home/jack/semantic/repos/accordion
+15 verbose addLocalTarball adding from inside cache /home/jack/.npm/semantic-ui-accordion/2.2.2/package.tgz
+16 verbose correctMkdir /home/jack/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd semantic-ui-accordion@2.2.2
+18 verbose afterAdd /home/jack/.npm/semantic-ui-accordion/2.2.2/package/package.json not in flight; writing
+19 verbose correctMkdir /home/jack/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /home/jack/.npm/semantic-ui-accordion/2.2.2/package/package.json written
+21 silly publish { name: 'semantic-ui-accordion',
+21 silly publish   version: '2.2.2',
+21 silly publish   title: 'Semantic UI - Accordion',
+21 silly publish   description: 'Single component release of accordion',
+21 silly publish   homepage: 'http://www.semantic-ui.com',
+21 silly publish   author: { name: 'Jack Lukic', email: 'jack@semantic-ui.com' },
+21 silly publish   license: 'MIT',
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/Semantic-Org/UI-Accordion.git' },
+21 silly publish   bugs: { url: 'https://github.com/Semantic-Org/Semantic-UI/issues' },
+21 silly publish   devDependencies: {},
+21 silly publish   readme: '# Semantic Accordion\n\nThis repository contains pre-compiled accordion files using the default themes. This is intended for use in projects that do not need all the bells and whistles of Semantic UI, and want to keep file size to a minimum.\n\nFor the latest changes please see the [Release Notes](https://github.com/Semantic-Org/UI-Accordion/blob/master/RELEASE-NOTES.md)\n\n**Special Note**\nAn update in `2.0.8` has fixed an issue which may have prevented some single component modules from working correctly. Please see notes in [this pull request](https://github.com/Semantic-Org/Semantic-UI/pull/2816).\n\nIf you\'re looking for the full version of Semantic including all components and build tools [check out the main project repository](https://github.com/Semantic-Org/Semantic-UI/tree/1.0)\n\n#### To install with Bower\n```\nbower install semantic-ui-accordion\n```\n\n#### To install with NPM\n```\nnpm install semantic-ui-accordion\n```\n\n#### To install with Meteor\n```\nmeteor add semantic:ui-accordion\n```\n\n\n## Addendum\n\nThis element\'s definitions (required class names, html structures) are available in the [UI Docs](http://www.semantic-ui.com)\n\nPlease consider checking out [all the benefits to theming](http://www.learnsemantic.com/guide/expert.html) before using these stand-alone releases.\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '9855d1cf655ae0f9f3291e4051be9c6bfaf650d3',
+21 silly publish   _id: 'semantic-ui-accordion@2.2.2',
+21 silly publish   scripts: {},
+21 silly publish   _shasum: '044c125522f1685e9ba0358b938873593d57de70',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name semantic-ui-accordion
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'semantic-ui-accordion',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'semantic-ui-accordion',
+26 silly mapToRegistry   name: 'semantic-ui-accordion',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/semantic-ui-accordion
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /home/jack/.npm/semantic-ui-accordion/2.2.2/package.tgz
+30 verbose request uri https://registry.npmjs.org/semantic-ui-accordion
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 9:53:38 AM
+33 verbose request using bearer token for auth
+34 verbose request id c37274a58238beed
+35 http request PUT https://registry.npmjs.org/semantic-ui-accordion
+36 http 403 https://registry.npmjs.org/semantic-ui-accordion
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Wed, 13 Jul 2016 16:53:36 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-sjc3125-SJC',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1468428816.139029,VS0,VE122',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /home/jack/.npm/registry.npmjs.org/semantic-ui-accordion on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 2.2.2." : semantic-ui-accordion
+40 verbose stack     at makeError (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+40 verbose stack     at Request._callback (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+40 verbose stack     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/request.js:200:22)
+40 verbose stack     at emitTwo (events.js:100:13)
+40 verbose stack     at Request.emit (events.js:185:7)
+40 verbose stack     at Request.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+40 verbose stack     at emitOne (events.js:95:20)
+40 verbose stack     at Request.emit (events.js:182:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:988:12)
+41 verbose statusCode 403
+42 verbose pkgid semantic-ui-accordion
+43 verbose cwd /home/jack/semantic/repos/accordion
+44 error Linux 4.4.0-28-generic
+45 error argv "/usr/bin/nodejs" "/usr/bin/npm" "publish"
+46 error node v5.10.1
+47 error npm  v3.10.5
+48 error code E403
+49 error "You cannot publish over the previously published version 2.2.2." : semantic-ui-accordion
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
