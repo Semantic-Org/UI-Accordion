@@ -24,6 +24,7 @@
     "http://semantic-ui.mit-license.org/"
   ],
   "main": [
-    "accordion.css"
+    "accordion.css",
+    "accordion.js"
   ]
 }
