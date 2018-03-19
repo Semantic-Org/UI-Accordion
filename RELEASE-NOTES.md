@@ -1,4 +1,4 @@
-### Version 2.3.0 - Feb 19, 2018
+### Version 2.3.0 - Feb 20, 2018
 
 - **Accordion** - Added `onChanging` callback for accordion that occurs before animation in both directions **Thanks @GammeGames** [#5892](https://github.com/Semantic-Org/Semantic-UI/pull/5892)
 
